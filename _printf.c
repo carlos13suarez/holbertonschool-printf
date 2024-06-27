@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 	argument_structure valid_format[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'%', print_modulo},
 		{'\0', NULL}
 	};
 
@@ -39,6 +40,7 @@ int _printf(const char *format, ...)
 					valid_format[j].printer(arguments_to_print, buffer, ptr_size);
 					size++;
 					i++;
+					va_arg(arguments_to_print, int);
 					break;
 				}
 				j++;

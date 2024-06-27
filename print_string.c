@@ -13,7 +13,7 @@ void print_string(va_list argument, char *buffer, int *position)
 	char *str = va_arg(argument, char *);
 
 	if (str == NULL)
-		return;
+		str = "(null)";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{

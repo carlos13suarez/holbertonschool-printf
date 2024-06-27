@@ -30,6 +30,7 @@ typedef struct argument_structure
 int _printf(const char *format, ...);
 void print_char(va_list argument, char *buffer, int *position);
 void print_string(va_list argument, char *buffer, int *position);
+void print_modulo(va_list argument, char *buffer, int *position);
 
 
 #endif

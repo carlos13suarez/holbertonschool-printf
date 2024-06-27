@@ -35,7 +35,6 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == valid_format[j].conversion_specifier)
 				{
 					valid_format[j].printer(arguments_to_print, buffer, ptr_size);
-					size++;
 					i++;
 					va_arg(arguments_to_print, int);
 					break;

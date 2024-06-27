@@ -12,4 +12,5 @@ void print_char(va_list argument, char *buffer, int *position)
 	char c = (char) va_arg(argument, int);
 
 	buffer[*position] = c;
+	(*position)++;
 }

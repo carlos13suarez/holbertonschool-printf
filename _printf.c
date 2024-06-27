@@ -20,17 +20,15 @@ int _printf(const char *format, ...)
 		{'%', print_modulo},
 		{'\0', NULL}
 	};
-
 	va_start(arguments_to_print, format);
-
-	while (format && format[i] != '\0')
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		j = 0;
 		if (format[i] != '%')
 			buffer[size++] = format[i];
 		else if (format[i + 1] != '\0')
 		{
-			while (valid_format[j].conversion_specifier != '\0')
+			for (j = 0; valid_format[j].conversion_specifier != '\0'; j++)
 			{
 				if (format[i + 1] == valid_format[j].conversion_specifier)
 				{
@@ -39,10 +37,10 @@ int _printf(const char *format, ...)
 					va_arg(arguments_to_print, int);
 					break;
 				}
-				j++;
 			}
 		}
-		i++;
+		else
+			buffer[size++] = format[i];
 	}
 	va_end(arguments_to_print);
 	write(1, buffer, size);

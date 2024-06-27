@@ -28,6 +28,8 @@ typedef struct argument_structure
 
 /* Prototypes */
 int _printf(const char *format, ...);
+void print_char(va_list argument, char *buffer, int *position);
+void print_string(va_list argument, char *buffer, int *position);
 
 
 #endif

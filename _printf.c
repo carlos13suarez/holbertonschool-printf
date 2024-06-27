@@ -27,10 +27,7 @@ int _printf(const char *format, ...)
 	{
 		j = 0;
 		if (format[i] != '%')
-		{
-			buffer[size] = format[i];
-			size++;
-		}
+			buffer[size++] = format[i];
 		else if (format[i + 1] != '\0')
 		{
 			while (valid_format[j].conversion_specifier != '\0')
@@ -45,11 +42,6 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
-		}
-		else
-		{
-			buffer[size] = format[i];
-			size++;
 		}
 		i++;
 	}

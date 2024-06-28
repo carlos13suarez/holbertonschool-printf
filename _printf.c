@@ -50,7 +50,6 @@ int valid_specifier(const char *format, argument_structure *valid_format,
 			if (format[i + 1] == valid_format[j].conversion_specifier)
 			{
 				valid_format[j].printer(arguments_to_print, buffer, ptr_size);
-				va_arg(arguments_to_print, int);
 				i++;
 				break;
 			}

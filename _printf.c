@@ -21,8 +21,10 @@ unsigned int _printf(const char *format, ...)
 		{'%', print_modulo},
 		{'\0', NULL}
 	};
+
 	if (format == NULL)
 		return (-1);
+
 	va_start(arguments_to_print, format);
 
 	size = valid_specifier(format, valid_format, buffer, arguments_to_print);
@@ -52,7 +54,7 @@ unsigned int valid_specifier(const char *format, argument_structure *valid_forma
 		{
 			if (format[i + 1] == '\0')
 			{
-				buffer[size++] = format[i];
+				buffer[size++] = '%';
 				return (-1);
 			}
 			if (format[i + 1] == valid_format[j].conversion_specifier)

@@ -13,8 +13,8 @@ int valid_specifier(const char *format, argument_structure *valid_format,
 int _printf(const char *format, ...)
 {
 	va_list arguments_to_print;
-	int size = 0;
-	char buffer[1024] = "";
+	unsigned int size = 0;
+	char buffer[4086] = "";
 	argument_structure valid_format[] = {
 		{'c', print_char},
 		{'s', print_string},
@@ -35,7 +35,8 @@ int _printf(const char *format, ...)
 int valid_specifier(const char *format, argument_structure *valid_format,
 		char *buffer, va_list arguments_to_print)
 {
-	int size = 0, i = 0, j = 0;
+	unsigned int size = 0;
+	int i = 0, j = 0;
 	int *ptr_size = &size;
 
 	for (i = 0; format && format[i] != '\0'; i++)

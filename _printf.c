@@ -10,7 +10,7 @@ int valid_specifier(const char *format, argument_structure *valid_format,
  * Return: the number of characters printed (excluding the null byte used to
  * end output to strings)
  */
-int _printf(const char *format, ...)
+unsigned int _printf(const char *format, ...)
 {
 	va_list arguments_to_print;
 	unsigned int size = 0;
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 
 
 
-int valid_specifier(const char *format, argument_structure *valid_format,
+unsigned int valid_specifier(const char *format, argument_structure *valid_format,
 		char *buffer, va_list arguments_to_print)
 {
 	unsigned int size = 0;

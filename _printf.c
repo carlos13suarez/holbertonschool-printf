@@ -1,6 +1,6 @@
 #include "main.h"
 
-int valid_specifier(const char *format, argument_structure *valid_format,
+unsigned int valid_specifier(const char *format, argument_structure *valid_format,
 		char *buffer, va_list arguments_to_print);
 /**
  * _printf - custom version of printf
@@ -37,7 +37,7 @@ unsigned int valid_specifier(const char *format, argument_structure *valid_forma
 {
 	unsigned int size = 0;
 	int i = 0, j = 0;
-	int *ptr_size = &size;
+	unsigned int *ptr_size = &size;
 
 	for (i = 0; format && format[i] != '\0'; i++)
 	{

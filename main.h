@@ -22,15 +22,15 @@
 typedef struct argument_structure
 {
 	char conversion_specifier;
-	void (*printer)(va_list args, char *buffer, int *position);
+	void (*printer)(va_list args, char *buffer, unsigned int *position);
 } argument_structure;
 
 
 /* Prototypes */
 unsigned int _printf(const char *format, ...);
-void print_char(va_list argument, char *buffer, int *position);
-void print_string(va_list argument, char *buffer, int *position);
-void print_modulo(va_list argument, char *buffer, int *position);
+void print_char(va_list argument, char *buffer, unsigned int *position);
+void print_string(va_list argument, char *buffer, unsigned int *position);
+void print_modulo(va_list argument, char *buffer, unsigned int *position);
 
 
 #endif

@@ -51,7 +51,10 @@ unsigned int valid_specifier(const char *format, argument_structure *valid_forma
 		for (j = 0; valid_format[j].conversion_specifier != '\0'; j++)
 		{
 			if (format[i + 1] == '\0')
+			{
+				buffer[size] = format[i];
 				return (-1);
+			}
 			if (format[i + 1] == valid_format[j].conversion_specifier)
 			{
 				valid_format[j].printer(arguments_to_print, buffer, ptr_size);

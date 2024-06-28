@@ -21,8 +21,8 @@ unsigned int _printf(const char *format, ...)
 		{'%', print_modulo},
 		{'\0', NULL}
 	};
-	if (!format)
-		return (0);
+	if (format == NULL)
+		return (-1);
 	va_start(arguments_to_print, format);
 
 	size = valid_specifier(format, valid_format, buffer, arguments_to_print);

@@ -52,7 +52,7 @@ unsigned int valid_specifier(const char *format, argument_structure *valid_forma
 		}
 		if (format[i + 1] == '\0')
 		{
-			buffer[size++] = format[i];
+			buffer[size++] = '%';
 			return (-1);
 		}
 		for (j = 0; valid_format[j].conversion_specifier != '\0'; j++)

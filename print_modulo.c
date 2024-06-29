@@ -7,7 +7,7 @@
  * @buffer: pointer to string
  * @position: where we'll start to add the chars in buffer from argument
  */
-	void print_modulo(__attribute__ ((unused)) va_list argument,
+void print_modulo(__attribute__ ((unused)) va_list argument,
 	char *buffer, unsigned int *position)
 {
 	buffer[*position] = '%';

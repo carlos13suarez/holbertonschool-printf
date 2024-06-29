@@ -7,6 +7,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
+#include <limits.h>
 
 
 /* Macros */
@@ -31,6 +32,7 @@ unsigned int _printf(const char *format, ...);
 void print_char(va_list argument, char *buffer, unsigned int *position);
 void print_string(va_list argument, char *buffer, unsigned int *position);
 void print_modulo(va_list argument, char *buffer, unsigned int *position);
+void print_num(va_list argument, char *buffer, unsigned int *position);
 
 
 #endif

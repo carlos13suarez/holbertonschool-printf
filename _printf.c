@@ -19,6 +19,8 @@ unsigned int _printf(const char *format, ...)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_modulo},
+		{'d', print_num},
+		{'i', print_num},
 		{'\0', NULL}
 	};
 

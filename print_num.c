@@ -12,6 +12,16 @@ void print_num(va_list argument, char *buffer, unsigned int *position)
 	int i, length = 0, decimal_accesser = 1, dn, n1 = 0,
 	    n2 = 0, num = (int) va_arg(argument, int);
 
+	if (num == INT_MIN)
+	{
+		char int_min_str[] = "-2147483648";
+		for (i = 0; int_min_str[i] != '\0'; i++)
+		{
+			buffer[*position] = int_min_str[i];
+			(*position)++;
+		}
+		return;
+	}
 	if (num < 0)
 	{
 		dn = num * -1;

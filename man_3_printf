@@ -1,0 +1,36 @@
+NAME
+	_printf - formatted output conversion
+SYNOPSIS
+	unsigned int _printf(const char *format, ...);
+DESCRIPTION
+	Function that produces formatted output to stdout (standard output stream). It returns the number of characters printed.
+Conversion specifiers
+	A character that specifies the type of conversion to be applied.
+       The conversion specifiers and their meanings are:
+       		% - One '%' is outputted.
+		d, i - The int argument is converted to signed decimal notation.
+		c - An int argument is casted into char, and the resulting character is written.
+RETURN VALUE
+	Return the number of bytes printed (excluding the null byte used to end output to strings).
+EXAMPLES
+	To print a string:
+
+		_printf("Hello, %s", "World!");
+
+	To print a character:
+
+		_printf("%c", 'H');
+
+	To print a decimal number:
+
+		_printf("My age is: %d", 8);
+
+	To print an integer:
+
+		_printf("It is %i", 2024);
+BUGS
+	Doesn't handle the flag characters, field width, precision, and the length modifiers.
+AUTHOR
+	carlos13suarez and legodevs
+COPYRIGHT
+	No copyright.
